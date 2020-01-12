@@ -1,0 +1,33 @@
+.chat-input {
+  display: flex;
+
+  &__inner {
+    height: 80px;
+    width: 100%;
+    border: none;
+    border-top: 1px solid $color-grey-2;
+    padding-left: 33px;
+    padding-right: 33px;
+    font-size: 14px;
+
+    &::placeholder {
+      color: #7D8790;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__btn {
+    width: 80px;
+    border: none;
+    background: $color-blue;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

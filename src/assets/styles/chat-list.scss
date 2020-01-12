@@ -1,0 +1,41 @@
+.chat-list {
+  width: 300px;
+  height: 100%;
+  overflow: auto;
+  background: $color-grey;
+  flex-shrink: 0;
+
+  &__item {
+    padding: 23px;
+    width: 100%;
+    height: 100px;
+    display: block;
+    border-left: 2px solid transparent;
+    border-bottom: 1px solid #E9EDF2;
+    text-decoration: none;
+    color: #7D8790;
+
+    &.router-link-exact-active {
+      border-left: 2px solid $color-blue;
+      background: #fff;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+
+    &-author {
+      color: #000;
+    }
+
+    &-date {
+      text-transform: uppercase;
+      color: $color-grey-3;
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+}

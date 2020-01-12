@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
+import Chat from '@/components/Chat/Chat.vue';
+import ChatDialog from '@/components/Chat/ChatDialog.vue';
+import ChatDialogEmpty from '@/components/Chat/ChatDialogEmpty.vue';
 
 Vue.use(VueRouter);
 
@@ -8,15 +10,19 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home,
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    component: Chat,
+    children: [
+      {
+        path: 'dialog/:id',
+        name: 'chat-dialog',
+        component: ChatDialog,
+      },
+      {
+        path: '*',
+        name: 'chat-dialog-empty',
+        component: ChatDialogEmpty,
+      },
+    ],
   },
 ];
 
