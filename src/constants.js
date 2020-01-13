@@ -1,0 +1,11 @@
+/* eslint-disable */
+
+const LOADERS = {
+  LOAD_DIALOG: 'LOAD_DIALOG',
+  LOAD_MESSAGES: 'LOAD_MESSAGES',
+  SENDING_MESSAGE: 'SENDING_MESSAGE',
+};
+
+export {
+  LOADERS,
+};

@@ -7,3 +7,11 @@ body {
 *, *:before, *:after {
   box-sizing: border-box;
 }
+
+
+.loader {
+  padding: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}

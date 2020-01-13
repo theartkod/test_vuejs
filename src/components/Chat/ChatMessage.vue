@@ -1,32 +1,24 @@
 <template>
-  <div>
-    <div class="chat-message chat-message--received">
-      <div class="chat-message__bubble">
-        Morbi hac eligendi totam? Elementum
-        mi facilis aliquet id turpis ultrices
-        mollitia porttitor praesentium animi
-        ullamco eleifend scelerisque, sapien
-        quam explicabo conubia egestas
-        vehicula!
-      </div>
-      <div class="chat-message__info">
-        <div class="chat-message__info-author">Василий</div>
-        <div class="chat-message__info-date">15.06.2018 13:29</div>
-      </div>
+  <div class="chat-message"
+       :class="message.sender === 'me' ? 'chat-message--sent' : 'chat-message--received'">
+    <div class="chat-message__bubble">
+      {{ message.text }}
     </div>
-    <div class="chat-message chat-message--sent">
-      <div class="chat-message__bubble">
-        Morbi hac eligendi totam? Elementum
-        mi facilis aliquet id turpis ultrices
-        mollitia porttitor praesentium animi
-        ullamco eleifend scelerisque, sapien
-        quam explicabo conubia egestas
-        vehicula!
-      </div>
-      <div class="chat-message__info">
-        <div class="chat-message__info-author">Василий</div>
-        <div class="chat-message__info-date">15.06.2018 13:29</div>
-      </div>
+    <div class="chat-message__info">
+      <div class="chat-message__info-author">{{ message.author }}</div>
+      <div class="chat-message__info-date">{{ message.created }}</div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'ChatMessage',
+  props: {
+    message: {
+      type: Object,
+      default: () => ({}),
+    },
+  },
+};
+</script>

@@ -2,6 +2,10 @@
   margin-bottom: 20px;
   max-width: 380px;
 
+  &:first-child {
+    margin-top: auto;
+  }
+
   &--received {
     position: relative;
     left: 40px;

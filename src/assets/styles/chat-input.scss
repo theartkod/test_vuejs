@@ -26,6 +26,11 @@
     cursor: pointer;
     flex-shrink: 0;
 
+    &:disabled {
+      opacity: .6;
+      user-select: none;
+      pointer-events: none;
+    }
     &:focus {
       outline: none;
     }
